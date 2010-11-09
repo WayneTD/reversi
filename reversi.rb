@@ -1,4 +1,5 @@
-require './board.rb'  
+on_windows = ENV['windir'] != nil
+require on_windows ? '.\board.rb' : './board.rb'
 
 board = Board.new
 currentColour = 'B'
@@ -13,7 +14,7 @@ until currentMove == "Q"
   blackScore = board.get_score('B')
   whiteScore = board.get_score('W')
 
-  puts `clear`
+  puts on_windows ? `cls` : `clear`
   puts 'Ruby Reversi by Wayne Davies'
   puts '----------------------------'
   puts

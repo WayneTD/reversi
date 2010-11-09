@@ -1,4 +1,5 @@
-require './coin.rb'
+on_windows = ENV['windir'] != nil
+require on_windows ? '.\coin.rb' : './coin.rb'
 
 class Board
   EMPTY_BOARD = 

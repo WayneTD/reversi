@@ -1,5 +1,6 @@
 require 'test/unit'
-require './board.rb'  
+on_windows = ENV['windir'] != nil
+require on_windows ? '.\board.rb' : './board.rb'  
   
 class BoardTests < Test::Unit::TestCase
   EMPTY_BOARD = 
